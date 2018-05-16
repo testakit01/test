@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <JustKampers_Usa>
+            <version>0.0.1</version>         
+        </JustKampers_Usa>
+    </modules>
+    <global>
+         <helpers>
+            <justkampers_usa>
+                <class>JustKampers_Usa_Helper</class>
+            </justkampers_usa>
+        </helpers>
+        <blocks>
+            <justkampers_usa>
+                <class>JustKampers_Usa_Block</class>
+            </justkampers_usa>
+            <checkout>
+                <rewrite>
+                    <cart_shipping>JustKampers_Usa_Block_Checkout_Cart_Shipping</cart_shipping>
+                </rewrite>
+            </checkout>
+        </blocks>
+        <models>
+            <justkampers_usa>
+                <class>JustKampers_Usa_Model</class>
+            </justkampers_usa>
+            <usa>
+                <rewrite>
+                    <shipping_carrier_ups>JustKampers_Usa_Model_Shipping_Carrier_Ups</shipping_carrier_ups>
+                </rewrite>
+            </usa>
+        </models>
+    </global>
+    <frontend>
+        <routers>
+            <usa>
+                <args>
+                    <modules>
+                        <JustKampers_Usa before="Mage_Usa">JustKampers_Usa</JustKampers_Usa>
+                    </modules>
+                </args>
+            </usa>
+        </routers>
+    </frontend>
+</config>
